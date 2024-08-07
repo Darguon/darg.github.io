@@ -114,3 +114,17 @@ body {
     box-shadow: 0 0 10px white;
     z-index: 999;
 }
+
+#pause-button {
+    position: fixed;
+    top: 14px;
+    left: 15px;
+    cursor: none;
+    z-index: 998; /* Ensure it is on top of other elements */
+}
+
+#pause-icon {
+    width: 40px;
+    height: 40px;
+    fill: white; /* Change color as needed */
+}
