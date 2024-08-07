@@ -36,8 +36,21 @@
 <!-- Pause Button -->
 <div id="pause-button" class="btn btn-white btn-animated" style="display:none;">
     <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="40" height="40">
-        <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
+        <path d="M361 41c14.8 9.1 24.5 25.1 24.5 42.5V428c0 17.4-9.4 33.4-24.5 41.9-15.1 8.5-33.7 8.2-48.5-.9L23 297c-14.3-8.7-23-24.2-23-41s8.7-32.2 23-41L312.5 39c14.8-9.1 33.4-9.4 48.5-.9z"/>
     </svg>
+</div>
+
+<!-- Song Info -->
+<div id="song-info" style="display:none;">
+    <h2>Now Playing: Adele - Skyfall</h2>
+    <div class="slider-container">
+        <div class="slider" id="song-slider"></div>
+        <div class="slider-dot" id="song-slider-dot"></div>
+    </div>
+    <div class="time">
+        <span id="current-time">0:00</span>
+        <span>3:57</span>
+    </div>
 </div>
 
 <script src="script.js"></script>
