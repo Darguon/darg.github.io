@@ -94,6 +94,9 @@ body {
     cursor: none; /* Hide the default cursor */
 }
 
+a {
+    cursor: default;
+}
 .cursor {
     position: absolute;
     width: 0; /* Hide the white cursor */
