@@ -88,3 +88,29 @@ body, html {
 #discord-icon:hover {
     transform: scale(1.2);
 }
+
+
+body {
+    cursor: none; /* Hide the default cursor */
+}
+
+.cursor {
+    position: absolute;
+    width: 0; /* Hide the white cursor */
+    height: 0; /* Hide the white cursor */
+    pointer-events: none; /* Prevent the cursor from interfering with other elements */
+    z-index: 1000;
+}
+
+.trail {
+    position: absolute;
+    width: 20px; /* Increased size for better coverage */
+    height: 20px; /* Increased size for better coverage */
+    border-radius: 50%;
+    background-color: black;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+    pointer-events: none;
+    box-shadow: 0 0 10px white;
+    z-index: 999;
+}
