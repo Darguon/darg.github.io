@@ -24,19 +24,67 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 document.addEventListener("DOMContentLoaded", function() {
-    let originalTitle = document.title;
-    let newTitle = "Darg";
-    let delay = 1000; // Time delay between title changes in milliseconds
+    const fullTitle = "Who is Darg?😈";
+    const typingSpeed = 100; // Speed of typing (milliseconds)
+    const cursorBlinkSpeed = 500; // Speed of cursor blinking (milliseconds)
+    const pauseBetweenCycles = 800; // Pause between typing and deleting cycles (milliseconds)
+    let currentTitle = "";
+    let index = 0;
+    let cursorVisible = true;
+    const cursor = "⏐";
+    let typingForward = true;
 
-    function animateTitle() {
-        setTimeout(function() {
-            document.title = newTitle;
-            setTimeout(function() {
-                document.title = originalTitle;
-                animateTitle();
-            }, delay);
-        }, delay);
+    function typeWriter() {
+        if (typingForward) {
+            if (index < fullTitle.length) {
+                currentTitle += fullTitle.charAt(index);
+                document.title = currentTitle + cursor;
+                index++;
+                setTimeout(typeWriter, typingSpeed);
+            } else {
+                setTimeout(reverseTypeWriter, pauseBetweenCycles);
+            }
+        }
     }
 
-    animateTitle();
+    function reverseTypeWriter() {
+        if (!typingForward) {
+            if (index > 0) {
+                currentTitle = currentTitle.slice(0, -1);
+                document.title = currentTitle + cursor;
+                index--;
+                setTimeout(reverseTypeWriter, typingSpeed);
+            } else {
+                typingForward = true;
+                setTimeout(typeWriter, pauseBetweenCycles);
+            }
+        }
+    }
+
+    function blinkCursor() {
+        if (cursorVisible) {
+            document.title = currentTitle;
+            cursorVisible = false;
+        } else {
+            document.title = currentTitle + cursor;
+            cursorVisible = true;
+        }
+        setTimeout(blinkCursor, cursorBlinkSpeed);
+    }
+
+    function startTyping() {
+        if (typingForward) {
+            typeWriter();
+        } else {
+            reverseTypeWriter();
+        }
+    }
+
+    blinkCursor();
+    startTyping();
+    setInterval(() => {
+        typingForward = !typingForward;
+        startTyping();
+    }, fullTitle.length * typingSpeed * 2 + pauseBetweenCycles * 2);
 });
+
