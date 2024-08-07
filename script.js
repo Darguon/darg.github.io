@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
     const enterScreen = document.getElementById('enter-screen');
     const enterText = document.getElementById('enter-text');
@@ -21,4 +22,21 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }, 1000); // Match this with the transition duration in CSS
     });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    let originalTitle = document.title;
+    let newTitle = "Darg";
+    let delay = 1000; // Time delay between title changes in milliseconds
+
+    function animateTitle() {
+        setTimeout(function() {
+            document.title = newTitle;
+            setTimeout(function() {
+                document.title = originalTitle;
+                animateTitle();
+            }, delay);
+        }, delay);
+    }
+
+    animateTitle();
 });
