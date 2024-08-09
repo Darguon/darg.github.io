@@ -111,8 +111,8 @@ body {
 
 .cursor {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: white;
     pointer-events: none;
@@ -121,14 +121,14 @@ body {
 
 .trail {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: black;
     opacity: 1;
     transition: opacity 1s ease-out;
     pointer-events: none;
-    box-shadow: 0 0 10px white;
+    box-shadow: 0 0 5px white;
     z-index: 999;
 }
 
