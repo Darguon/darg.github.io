@@ -8,6 +8,10 @@ body, html {
     justify-content: center;
     align-items: center;
     background: black;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+    user-select: none;         /* Non-prefixed version, currently supported by Chrome, Edge, Opera, and Firefox */
 }
 
 #enter-screen {
@@ -209,15 +213,6 @@ body {
     justify-content: space-between;
     font-size: 0.9em;
 }
-
-::selection {
-    background-color: grey; /* The background color when text is selected */
-    color: white; /* The color of the text when selected (optional) */
-}
-
-::-moz-selection { /* For Firefox */
-    background-color: grey;
-    color: white;
 
 @keyframes redGlow {
     0% {
