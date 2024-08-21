@@ -83,6 +83,26 @@ body, html {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
 }
 
+.tooltip-text {
+    visibility: hidden; /* Hide the tooltip by default */
+    background-color: rgba(128, 128, 128, 0.6); /* Grey background with 60% opacity */
+    color: white; /* Text color */
+    text-align: center; /* Center the text */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Some padding */
+    position: absolute; /* Position the tooltip */
+    z-index: 1; /* Ensure the tooltip is above other elements */
+    bottom: 125%; /* Position the tooltip above the text */
+    left: 50%; /* Position the tooltip at the center */
+    transform: translateX(-50%); /* Center the tooltip */
+    opacity: 0; /* Make it transparent */
+    transition: opacity 0.3s; /* Smooth transition for the tooltip */
+}
+
+#profile-name:hover .tooltip-text {
+    visibility: visible; /* Show the tooltip */
+    opacity: 1; /* Make the tooltip fully visible */
+
 #profile-name {
     color: white;
     font-size: 2em;
