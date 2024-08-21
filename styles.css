@@ -99,10 +99,6 @@ body, html {
     transition: opacity 0.3s; /* Smooth transition for the tooltip */
 }
 
-#profile-name:hover .tooltip-text {
-    visibility: visible; /* Show the tooltip */
-    opacity: 1; /* Make the tooltip fully visible */
-
 #profile-name {
     color: white;
     font-size: 2em;
