@@ -210,6 +210,15 @@ body {
     font-size: 0.9em;
 }
 
+::selection {
+    background-color: grey; /* The background color when text is selected */
+    color: white; /* The color of the text when selected (optional) */
+}
+
+::-moz-selection { /* For Firefox */
+    background-color: grey;
+    color: white;
+
 @keyframes redGlow {
     0% {
         box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.5);
