@@ -10,7 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const currentTimeElement = document.getElementById('current-time');
     const pauseButton = document.getElementById('pause-button');
     const pauseIcon = document.getElementById('pause-icon');
+      const playIcon = document.getElementById('play-icon');
     const songTitle = document.querySelector('#song-info h2');
+    const volumeSlider = document.getElementById('volume-slider');
+    const volumeIcon = document.getElementById('volume-icon')
+
 
     let songs = [
         {src: 'music.mp3', title: 'SEREBRO - Сладко', duration: '3:57'},
@@ -43,10 +47,24 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+     // --- Modified Song Switching Code ---
+    function toggleSong() {
+        currentSongIndex = (currentSongIndex === 0) ? 1 : 0; // Toggle between 0 and 1
+        playCurrentSong();
+    }
+
+     // Add event listener to the song title to allow for song switching
+    songTitle.addEventListener("click", toggleSong);
+    // --- End Modified Song Switching Code ---
+
+
     audio.addEventListener('ended', () => {
         currentSongIndex++;
         if (currentSongIndex < songs.length) {
             playCurrentSong();
+        } else {
+            currentSongIndex = 0; // Loop back to the first song
+           playCurrentSong();
         }
     });
 
@@ -130,33 +148,62 @@ document.addEventListener('DOMContentLoaded', function () {
     customCursor.classList.add("cursor");
     document.body.appendChild(customCursor);
 
+    let mouseX = 0;
+    let mouseY = 0;
+
     document.addEventListener("mousemove", function(e) {
-        customCursor.style.left = e.pageX + "px";
-        customCursor.style.top = e.pageY + "px";
+         mouseX = e.pageX;
+         mouseY = e.pageY;
+    });
 
-        const trail = document.createElement("div");
-        trail.classList.add("trail");
-        trail.style.left = e.pageX + "px";
-        trail.style.top = e.pageY + "px";
-        document.body.appendChild(trail);
+    function animateCursor() {
+        customCursor.style.left = mouseX + "px";
+        customCursor.style.top = mouseY + "px";
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
 
-        setTimeout(() => {
-            trail.style.opacity = "0";
+    const trailInterval = 10;
+    let lastTrailTime = 0;
+
+    document.addEventListener("mousemove", function(e) {
+      const currentTime = Date.now();
+       if (currentTime - lastTrailTime > trailInterval) {
+            lastTrailTime = currentTime;
+            const trail = document.createElement("div");
+            trail.classList.add("trail");
+            trail.style.left = e.pageX + "px";
+            trail.style.top = e.pageY + "px";
+            document.body.appendChild(trail);
+
             setTimeout(() => {
-                document.body.removeChild(trail);
-            }, 1000);
-        }, 0);
+                trail.style.opacity = "0";
+                setTimeout(() => {
+                    document.body.removeChild(trail);
+                }, 1000);
+            }, 0);
+          }
     });
 
     pauseButton.addEventListener("click", function() {
         if (video.paused) {
             video.play();
             audio.play();
-            pauseIcon.innerHTML = '<path d="M361 41c14.8 9.1 24.5 25.1 24.5 42.5V428c0 17.4-9.4 33.4-24.5 41.9-15.1 8.5-33.7 8.2-48.5-.9L23 297c-14.3-8.7-23-24.2-23-41s8.7-32.2 23-41L312.5 39c14.8-9.1 33.4-9.4 48.5-.9z"/>';
         } else {
             video.pause();
             audio.pause();
-            pauseIcon.innerHTML = '<path d="M361 41c14.8 9.1 24.5 25.1 24.5 42.5V428c0 17.4-9.4 33.4-24.5 41.9-15.1 8.5-33.7 8.2-48.5-.9L23 297c-14.3-8.7-23-24.2-23-41s8.7-32.2 23-41L312.5 39c14.8-9.1 33.4-9.4 48.5-.9z"/>';
         }
     });
+
+      // --- Volume Slider Event Listener ---
+    volumeSlider.addEventListener('input', function() {
+        audio.volume = volumeSlider.value; // Set audio volume based on the slider
+         if (audio.volume === 0){
+            volumeIcon.innerHTML = '<path d="M219.2 147.5c-16.5-16.5-16.5-43.2 0-59.7 14.2-14.2 36.4-15.4 52-.9l72.6 61.9H424c13.3 0 24 10.7 24 24v218c0 13.3-10.7 24-24 24H343.9l-72.6 61.9c-15.6 14.4-37.7 13.2-52-.9-16.5-16.5-16.5-43.2 0-59.7l42.9-42.9-42.9-42.9zm236.7 169.2c-8.4 8.4-20.1 8.4-28.5 0-11.8-11.8-30.7-11.8-42.5 0-8.4 8.4-20.1 8.4-28.5 0-11.8-11.8-30.7-11.8-42.5 0-8.4 8.4-20.1 8.4-28.5 0 11.8-11.8 30.7-11.8 42.5 0 8.4 8.4 20.1 8.4 28.5 0 11.8 11.8 30.7 11.8 42.5 0z"/>';
+         } else {
+           volumeIcon.innerHTML = '<path d="M256 144C219.6 144 192 171.6 192 208V304c0 36.4 27.6 64 64 64h0c36.4 0 64-27.6 64-64V208c0-36.4-27.6-64-64-64zm192 160c-17.7 0-32 14.3-32 32v32c0 17.7 14.3 32 32 32s32-14.3 32-32v-32c0-17.7-14.3-32-32-32zM48 64C21.5 64 0 85.5 0 112v288c0 26.5 21.5 48 48 48h0c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM416 96c-35.3 0-64 28.7-64 64v288c0 35.3 28.7 64 64 64s64-28.7 64-64V160c0-35.3-28.7-64-64-64z"/>'
+         }
+    });
+    // --- End Volume Slider Event Listener ---
+
 });
