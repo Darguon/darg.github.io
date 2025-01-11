@@ -37,15 +37,19 @@
 </div>
 
 <!-- Pause Button -->
-<div id="pause-button" class="btn btn-white btn-animated" style="display:none;">
-    <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="40" height="40">
-        <path d="M361 41c14.8 9.1 24.5 25.1 24.5 42.5V428c0 17.4-9.4 33.4-24.5 41.9-15.1 8.5-33.7 8.2-48.5-.9L23 297c-14.3-8.7-23-24.2-23-41s8.7-32.2 23-41L312.5 39c14.8-9.1 33.4-9.4 48.5-.9z"/>
+<div id="pause-button" class="btn btn-white btn-animated tooltip" style="display:none;">
+    <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+      <path fill="white" d="M4 4h4v16H4V4zm12 0h4v16h-4V4z"/>
     </svg>
+    <span class="tooltiptext">Pause/Play</span>
 </div>
 
 <!-- Song Info -->
-<div id="song-info" style="display:none;">
-    <h2>Now Playing: SEREBRO - Сладко</h2>
+<div id="song-info" class="tooltip" style="display:none;">
+    <h2 >
+        Now Playing: SEREBRO - Сладко
+        <span class="tooltiptext">Click to Switch Songs</span>
+    </h2>
     <div class="slider-container">
         <div class="slider" id="song-slider"></div>
         <div class="slider-dot" id="song-slider-dot"></div>
@@ -53,6 +57,13 @@
     <div class="time">
         <span id="current-time">0:00</span>
         <span>3:57</span>
+    </div>
+    <div class="volume-container tooltip">
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" id="volume-icon">
+          <path d="M219.2 147.5c-16.5-16.5-16.5-43.2 0-59.7 14.2-14.2 36.4-15.4 52-.9l72.6 61.9H424c13.3 0 24 10.7 24 24v218c0 13.3-10.7 24-24 24H343.9l-72.6 61.9c-15.6 14.4-37.7 13.2-52-.9-16.5-16.5-16.5-43.2 0-59.7l42.9-42.9-42.9-42.9zm236.7 169.2c-8.4 8.4-20.1 8.4-28.5 0-11.8-11.8-30.7-11.8-42.5 0-8.4 8.4-20.1 8.4-28.5 0-11.8-11.8-30.7-11.8-42.5 0-8.4 8.4-20.1 8.4-28.5 0 11.8-11.8 30.7-11.8 42.5 0 8.4 8.4 20.1 8.4 28.5 0 11.8 11.8 30.7 11.8 42.5 0z"/>
+        </svg>
+        <span class="tooltiptext">Volume Control</span>
     </div>
 </div>
 
