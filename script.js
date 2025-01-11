@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let songs = [
         {src: 'music.mp3', title: 'SEREBRO - Сладко', duration: '3:57'},
-        {src: 'music2.mp3', title: 'Next Song Title', duration: '4:20'}
+        {src: 'music2.mp3', title: 'MORAD & GIMS - SEYA', duration: '4:20'}
     ];
     let currentSongIndex = 0;
 
