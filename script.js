@@ -195,15 +195,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-      // --- Volume Slider Event Listener ---
-    volumeSlider.addEventListener('input', function() {
+ volumeSlider.addEventListener('input', function() {
         audio.volume = volumeSlider.value; // Set audio volume based on the slider
          if (audio.volume === 0){
-            volumeIcon.innerHTML = '<path d="M219.2 147.5c-16.5-16.5-16.5-43.2 0-59.7 14.2-14.2 36.4-15.4 52-.9l72.6 61.9H424c13.3 0 24 10.7 24 24v218c0 13.3-10.7 24-24 24H343.9l-72.6 61.9c-15.6 14.4-37.7 13.2-52-.9-16.5-16.5-16.5-43.2 0-59.7l42.9-42.9-42.9-42.9zm236.7 169.2c-8.4 8.4-20.1 8.4-28.5 0-11.8-11.8-30.7-11.8-42.5 0-8.4 8.4-20.1 8.4-28.5 0-11.8-11.8-30.7-11.8-42.5 0-8.4 8.4-20.1 8.4-28.5 0 11.8-11.8 30.7-11.8 42.5 0 8.4 8.4 20.1 8.4 28.5 0 11.8 11.8 30.7 11.8 42.5 0z"/>';
+            volumeIcon.src = 'volumeoff.svg';
          } else {
-           volumeIcon.innerHTML = '<path d="M256 144C219.6 144 192 171.6 192 208V304c0 36.4 27.6 64 64 64h0c36.4 0 64-27.6 64-64V208c0-36.4-27.6-64-64-64zm192 160c-17.7 0-32 14.3-32 32v32c0 17.7 14.3 32 32 32s32-14.3 32-32v-32c0-17.7-14.3-32-32-32zM48 64C21.5 64 0 85.5 0 112v288c0 26.5 21.5 48 48 48h0c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM416 96c-35.3 0-64 28.7-64 64v288c0 35.3 28.7 64 64 64s64-28.7 64-64V160c0-35.3-28.7-64-64-64z"/>'
+           volumeIcon.src = 'volumeon.svg';
          }
-    });
+});
     // --- End Volume Slider Event Listener ---
 
 });
