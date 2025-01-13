@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronosync - Lasse on komea!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">Lasse On Ihana!</div>
+        <nav>
+            <ul>
+                <li><a href="#about" data-i18n="nav_about">Lassesta</a></li>
+                <li><a href="#edit" data-i18n="nav_edit">Lassen Muokkaus</a></li>
+                 <li><a href="#process" data-i18n="nav_process">Lassen Prosessi</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Ota yhteyttä (Lasseen!)</a></li>
+                 <li>
+                    <select id="language-select">
+                      <option value="en">English</option>
+                      <option value="fi">Suomi</option>
+                    </select>
+                 </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1 data-i18n="hero_headline">Ihaile Lassea!</h1>
+            <p data-i18n="hero_paragraph">Uppoudu Lasseen – hän on todella komea! Katso hänen muokkaustaitojaan.</p>
+            <a href="#edit" class="btn" data-i18n="hero_button">Tutki Lassea</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 data-i18n="about_headline">Tietoa Lassesta</h2>
+        <p data-i18n="about_paragraph">Lasse on uskomattoman komea ja taitava muokkaaja. Tämä sivu on omistettu hänen tyylikkyydelleen ja upeille töilleen! Katsokaa, miten hän loistaa!</p>
+    </section>
+
+    <section id="edit">
+        <h2 data-i18n="edit_headline">Lassen Muokkaus</h2>
+        <div class="edit-stream-container">
+            <div class="edit-display">
+               <video id="myVideo" controls>
+                   <source src="1.mp4" type="video/mp4">
+                 Your browser does not support the video tag.
+               </video>
+            </div>
+           <div class="data-panels">
+              <div class="data-panel">
+                   <h3 data-i18n="timeline_header">Lassen Aikajana</h3>
+                   <ul id="timeline-list"></ul>
+              </div>
+             <div class="data-panel">
+                   <h3 data-i18n="audio_header">Lassen Äänianalyysi</h3>
+                   <p id="audio-analysis-text" data-i18n="audio_placeholder">Lassen äänimaisemat ovat upeita</p>
+              </div>
+           </div>
+        </div>
+    </section>
+   <section id="process">
+      <h2 data-i18n="process_headline">Lassen Prosessi</h2>
+      <div class="process-container">
+           <div class="step">
+               <h3>Lassen Vaihe 1</h3>
+              <p>Ensin Lasse viehättää katsojat ulkonäöllään, sitten tyylillään!</p>
+           </div>
+          <div class="step">
+              <h3>Lassen Vaihe 2</h3>
+              <p>Lasse parantaa aina!</p>
+           </div>
+      </div>
+    </section>
+
+    <section id="contact">
+        <h2 data-i18n="contact_headline">Ota yhteyttä Lasseen!</h2>
+        <p data-i18n="contact_paragraph">Ota yhteyttä Lasseen saadaksesi lisätietoja tai kehuaksesi hänen komeuttaan!</p>
+        <form id="contact-form" >
+            <input type="text" placeholder="Nimesi" data-i18n="name_placeholder" required>
+            <input type="email" placeholder="Sähköpostiosoitteesi" data-i18n="email_placeholder" required>
+            <textarea placeholder="Kerro Lasselle" data-i18n="message_placeholder"></textarea>
+            <button type="submit" data-i18n="contact_button">Lähetä viesti Lasselle!</button>
+        </form>
+        <div id="form-message"></div>
+    </section>
+
+    <footer>
+        <p data-i18n="footer_copyright">© 2024 Lasselle Omistettu Sivu</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

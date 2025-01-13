@@ -1,0 +1,280 @@
+/* ==========================================================================
+   Table of Contents:
+   ==========================================================================
+   1. Global Styles
+   2. Header
+   3. Hero Section
+   4. Section Styling (About, Edit, Process, Contact)
+   5. Edit Stream Components
+   6. Footer
+   7. Responsive Design
+   ========================================================================== */
+
+/* ==========================================================================
+   1. Global Styles
+   ========================================================================== */
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #111;
+    color: #eee;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    line-height: 1.6; /* Improves text readability */
+    background-image: url('background.jpg'); /* Add Main Background Here */
+    background-size: cover;
+    background-position: center top -350px; /* Move Main Background further up */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+}
+
+a {
+    color: #0ff;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+a:hover {
+    color: #00ffff; /* Slightly brighter cyan on hover */
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+    2. Header
+   ========================================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly transparent header */
+    backdrop-filter: blur(5px); /* Glass effect*/
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase; /* More futuristic */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+#language-select {
+    background-color: transparent;
+    color: #eee;
+    border: 1px solid #0ff;
+    padding: 10px;
+    font-family: 'Roboto Mono', monospace;
+    cursor: pointer; /* Indicate it's interactive */
+    transition: border-color 0.3s ease;
+}
+#language-select:hover{
+   border-color: #00ffff;
+}
+/* ==========================================================================
+   3. Hero Section
+   ========================================================================== */
+#hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-background.jpg'); /* Add Hero Background Here */
+    background-size: cover;
+     background-position: center top -70px; /* Move Hero Background further up */
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px #000; /* Depth */
+}
+
+.hero-content .btn {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid #0ff;
+    cursor: pointer;
+    color: #eee;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-content .btn:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    border-color: #00ffff;
+}
+
+/* ==========================================================================
+    4. Section Styling (About, Edit, Process, Contact)
+   ========================================================================== */
+#about,
+#edit,
+#contact,
+#process {
+    padding: 60px 40px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    transition: all 0.3s ease; /* transition on page scroll*/
+}
+
+#process {
+    text-align: left;
+}
+
+#process .process-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+#process .step {
+    flex-basis: 400px;
+    border: 1px solid #0ff;
+    padding: 20px;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* subtle shadow */
+}
+
+/* ==========================================================================
+   5. Edit Stream Components
+   ========================================================================== */
+#edit .edit-stream-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#edit .edit-display {
+    width: 80%;
+    max-width: 800px;
+    margin-bottom: 20px;
+    border: 1px solid #0ff; /* Consistent border*/
+    border-radius: 5px; /* Rounded corners*/
+    overflow: hidden; /* Ensure video corners are rounded*/
+    position: relative;
+}
+
+#edit video {
+    width: 100%;
+    display: block;
+}
+
+
+#edit .data-panels {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 20px; /* Added spacing */
+}
+
+#edit .data-panel {
+    flex-basis: 45%;
+    border: 1px solid #0ff;
+    padding: 20px;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* subtle shadow */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Hover effects */
+}
+
+#edit .data-panel:hover{
+    transform: translateY(-5px)
+}
+
+#timeline-list li {
+    cursor: pointer;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+#timeline-list li:hover {
+   background-color: rgba(0, 255, 255, 0.2)
+}
+
+/* Contact Form */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 20px auto;
+    gap: 10px;
+}
+
+#contact form input,
+#contact form textarea {
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid #0ff;
+    color: #eee;
+    transition: border-color 0.3s ease;
+}
+#contact form input:focus,
+#contact form textarea:focus {
+   outline: none;
+   border-color: #00ffff;
+}
+#contact form button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid #0ff;
+    cursor: pointer;
+    color: #eee;
+    font-family: 'Roboto Mono', monospace;
+     transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#contact form button:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    border-color: #00ffff;
+}
+#form-message {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   6. Footer
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #0ff;
+    color: #ccc; /* Slightly lighter text */
+}
+
+/* ==========================================================================
+   7. Responsive Design
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #edit .data-panels {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #edit .data-panel {
+        flex-basis: 100%;
+    }
+
+    #process .process-container{
+      flex-direction: column;
+     }
+}
