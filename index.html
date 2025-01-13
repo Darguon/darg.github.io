@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who is?</title>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
     <!-- Enter Screen -->
-   <div id="enter-screen">
-     <div id="enter-text">Click To Enter...</div>
-   </div>
+    <div id="enter-screen">
+        <div id="enter-text">Click To Enter...</div>
+    </div>
 
-   <!-- The video -->
-   <video autoplay muted loop id="myVideo" style="display:none;">
-     <source src="rain.mp4" type="video/mp4">
-     Your browser does not support HTML5 video.
-  </video>
+    <!-- The video -->
+    <video autoplay muted loop id="myVideo" style="display:none;">
+        <source src="rain.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
 
     <!-- Background music -->
     <audio id="background-music" loop>
@@ -28,44 +29,44 @@
     </audio>
 
     <!-- Profile Picture and Name -->
-   <div id="profile" style="display:none;">
+    <div id="profile" style="display:none;">
         <img src="dark.gif" alt="Profile Picture" id="profile-pic">
         <div id="profile-name">
             Darg
             <span class="tooltip-text">Yes! That's my name!</span>
-       </div>
+        </div>
         <a href="discord://-/users/1229006135596683324" target="_blank">
-           <img src="discord.png" alt="Discord Icon" class="icon" id="discord-icon">
+            <img src="discord.png" alt="Discord Icon" class="icon" id="discord-icon">
         </a>
     </div>
 
-     <!-- Pause Button -->
-   <div id="pause-button" class="btn btn-white btn-animated tooltip" style="display:none;">
+    <!-- Pause Button -->
+    <div id="pause-button" class="btn btn-white btn-animated tooltip" style="display:none;">
         <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
-          <path fill="white" d="M4 4h4v16H4V4zm12 0h4v16h-4V4z"/>
-       </svg>
-       <span class="tooltiptext">Pause/Play</span>
-   </div>
+            <path fill="white" d="M4 4h4v16H4V4zm12 0h4v16h-4V4z"/>
+        </svg>
+        <span class="tooltiptext">Pause/Play</span>
+    </div>
 
-     <!-- Song Info -->
+    <!-- Song Info -->
     <div id="song-info" class="tooltip" style="display:none;">
         <h2 >
             Now Playing: SEREBRO - Сладко
             <span class="tooltiptext">Click to Switch Songs</span>
         </h2>
-       <div class="slider-container">
+        <div class="slider-container">
             <div class="slider" id="song-slider"></div>
             <div class="slider-dot" id="song-slider-dot"></div>
         </div>
-         <div class="time">
+        <div class="time">
             <span id="current-time">0:00</span>
             <span>3:57</span>
-       </div>
-<div class="volume-container tooltip">
-    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
-     <img src="volumeon.svg" alt="Volume Icon" id="volume-icon" width="20" height="20">
-    <span class="tooltiptext">Volume Control</span>
-</div>
+        </div>
+        <div class="volume-container tooltip">
+            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+            <img src="volumeon.svg" alt="Volume Icon" id="volume-icon" width="20" height="20">
+            <span class="tooltiptext">Volume Control</span>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
