@@ -10,15 +10,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const currentTimeElement = document.getElementById('current-time');
     const pauseButton = document.getElementById('pause-button');
     const pauseIcon = document.getElementById('pause-icon');
-      const playIcon = document.getElementById('play-icon');
     const songTitle = document.querySelector('#song-info h2');
     const volumeSlider = document.getElementById('volume-slider');
     const volumeIcon = document.getElementById('volume-icon')
+    const sliderContainer = document.querySelector('#song-info .slider-container');
 
 
     let songs = [
-        {src: 'music.mp3', title: 'SEREBRO - Сладко', duration: '3:57'},
-        {src: 'music2.mp3', title: 'MORAD & GIMS - SEYA', duration: '4:20'}
+           {src: 'Music/music.mp3', title: 'SEREBRO - Сладко', duration: '3:57'},
+           {src: 'Music/music2.mp3', title: 'MORAD & GIMS - SEYA', duration: '4:20'}
     ];
     let currentSongIndex = 0;
 
@@ -69,18 +69,52 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     audio.addEventListener("timeupdate", function() {
+        updateSongProgress();
+    });
+  function updateSongProgress() {
         const currentTime = audio.currentTime;
         const duration = audio.duration;
         const progress = (currentTime / duration) * 100;
-        songSlider.style.width = progress + "%";
-        songSliderDot.style.left = progress + "%";
+         requestAnimationFrame(()=> {
+          songSlider.style.width = progress + "%";
+          songSliderDot.style.left = progress + "%";
+       });
 
         // Update current time display
         const minutes = Math.floor(currentTime / 60);
         const seconds = Math.floor(currentTime % 60);
         currentTimeElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-    });
+    }
 
+ // --- Add Event listener for slider seeking ---
+ let sliderDragging = false;
+ let seekPosition = null;
+    sliderContainer.addEventListener("mousedown", function(e) {
+    sliderDragging = true;
+     const sliderRect = sliderContainer.getBoundingClientRect();
+
+    function mousemoveHandler(e){
+        seekPosition = (e.clientX - sliderRect.left) / sliderRect.width;
+        requestAnimationFrame(()=> {
+          songSlider.style.width = (seekPosition * 100) + "%";
+          songSliderDot.style.left = (seekPosition * 100) + "%";
+        });
+       }
+
+       function mouseupHandler() {
+         if (seekPosition !== null) {
+           audio.currentTime = seekPosition * audio.duration;
+           updateSongProgress();
+         }
+         seekPosition = null;
+          sliderDragging = false;
+           document.removeEventListener("mousemove", mousemoveHandler);
+           document.removeEventListener("mouseup", mouseupHandler);
+       }
+     document.addEventListener("mousemove", mousemoveHandler);
+     document.addEventListener("mouseup", mouseupHandler);
+});
+    // --- End Slider seeking Event Listener ---
     const fullTitle = "Who is Darg?😈";
     const typingSpeed = 100; // Speed of typing (milliseconds)
     const cursorBlinkSpeed = 500; // Speed of cursor blinking (milliseconds)
@@ -152,16 +186,14 @@ document.addEventListener('DOMContentLoaded', function () {
     let mouseY = 0;
 
     document.addEventListener("mousemove", function(e) {
-         mouseX = e.pageX;
-         mouseY = e.pageY;
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+        requestAnimationFrame(()=>{
+          customCursor.style.left = mouseX + "px";
+         customCursor.style.top = mouseY + "px";
+        });
     });
 
-    function animateCursor() {
-        customCursor.style.left = mouseX + "px";
-        customCursor.style.top = mouseY + "px";
-        requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
 
     const trailInterval = 10;
     let lastTrailTime = 0;
