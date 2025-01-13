@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const pauseIcon = document.getElementById('pause-icon');
 
     let songs = [
-        { src: 'Music/music.mp3', title: 'SEREBRO - Сладко', duration: '3:57' },
-        { src: 'Music/music2.mp3', title: 'MORAD & GIMS - SEYA', duration: '4:20' }
+        { src: 'music.mp3', title: 'SEREBRO - Сладко', duration: '3:57' },
+        { src: 'music2.mp3', title: 'MORAD & GIMS - SEYA', duration: '4:20' }
     ];
     let currentSongIndex = 0;
 
