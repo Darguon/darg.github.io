@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const pauseIcon = document.getElementById('pause-icon');
 
     let songs = [
-        { src: 'music.mp3', title: 'Sigue - (Slowed + Reverb)', duration: '3:55' },
-        { src: 'music2.mp3', title: 'MORAD & GIMS - SEYA', duration: '4:20' }
+        { src: 'music.mp3', title: 'Nuteh Jonez - Automatic', duration: '2:32' },
+        { src: 'music2.mp3', title: 'Sigue - (Slowed + Reverb)', duration: '4:20' }
     ];
     let currentSongIndex = 0;
 
