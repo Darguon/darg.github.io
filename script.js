@@ -130,8 +130,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let songs = [
         { src: 'music.mp3', title: 'Nuteh Jonez - Automatic', duration: '2:32' },
         { src: 'music2.mp3', title: 'Sigue - (Slowed + Reverb)', duration: '4:20' },
-        { src: 'music3.mp3', title: 'Late Night Vibes', duration: '3:45' },
-        { src: 'music4.mp3', title: 'Midnight Dreams', duration: '3:22' }
     ];
     let currentSongIndex = 0;
 
