@@ -1,0 +1,104 @@
+/* Parallax and 3D Effects */
+.parallax-container {
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
+.layer-deep {
+  transform: translateZ(-100px) scale(1.1);
+}
+
+.layer-mid {
+  transform: translateZ(-50px) scale(1.05);
+}
+
+.layer-front {
+  transform: translateZ(0);
+}
+
+/* Enhanced 3D profile effect */
+.profile-3d-enhanced {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.profile-3d-enhanced .profile-element {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.profile-3d-enhanced .profile-element:hover {
+  transform: translateZ(20px);
+}
+
+.profile-3d-enhanced::before {
+  transform: translateZ(-20px);
+}
+
+/* 3D flip with better perspective */
+.flip-container-enhanced {
+  perspective: 1500px;
+}
+
+.flipper-enhanced {
+  transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.flip-container-enhanced:hover .flipper-enhanced {
+  transform: rotateY(180deg) translateZ(30px);
+}
+
+/* Float animation with parallax movement */
+.floating-parallax {
+  animation: float-parallax 4s infinite ease-in-out;
+}
+
+@keyframes float-parallax {
+  0% {
+    transform: translateY(0px) translateZ(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) translateZ(20px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0px) translateZ(0px) rotate(0deg);
+  }
+}
+
+/* General 3D shadow for elements */
+.shadow-3d {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  transform: translateZ(10px);
+}
+
+/* Track mouse position for global parallax effect */
+#parallax-wrapper {
+  perspective: 2000px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#parallax-scene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}

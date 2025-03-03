@@ -1,0 +1,68 @@
+/* Spotify Player Component Styles */
+#spotify-player {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px 5px rgba(131, 6, 6, 0.5);
+  animation: redGlow 2s infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 300px;
+  backdrop-filter: blur(5px);
+}
+
+#spotify-player:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px 8px rgba(131, 6, 6, 0.7);
+}
+
+#spotify-player iframe {
+  border: none;
+  width: 100%;
+}
+
+/* Additional styling for the player container */
+.spotify-container {
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+}
+
+/* Spotify toggle button when minimized */
+#spotify-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+  z-index: 1000;
+  display: none;
+}
+
+#spotify-toggle:hover {
+  background-color: rgba(255, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Minimized state */
+#spotify-player.minimized {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  display: none;
+}
+
+#spotify-player.minimized iframe {
+  visibility: hidden;
+}

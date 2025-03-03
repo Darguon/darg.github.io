@@ -1,0 +1,131 @@
+/* Profile Component Styles */
+#profile {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 11;
+  transition: transform 0.5s ease-in-out;
+  perspective: 1000px;
+}
+
+#profile::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  right: -30px;
+  bottom: -30px;
+  background-color: var(--profile-bg);
+  z-index: -1;
+  box-shadow: 0 0 20px 5px var(--profile-border);
+  animation: redGlow 2s infinite alternate;
+  border-radius: 20px;
+  transform: translateZ(-10px);
+  transition: all 0.5s ease;
+}
+
+.profile-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.profile-3d:hover {
+  transform: rotateX(5deg) rotateY(5deg);
+}
+
+#profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#profile-pic:hover {
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 50px rgba(255, 0, 0, 0.4);
+  transform: scale(1.05);
+}
+
+#profile-name {
+  color: var(--text-color);
+  font-size: 2rem;
+  margin-top: 10px;
+  text-shadow:
+    0 0 5px var(--glow-color),
+    0 0 10px var(--glow-color),
+    0 0 15px var(--glow-color),
+    0 0 20px var(--glow-color),
+    0 0 25px var(--glow-color),
+    0 0 30px var(--glow-color),
+    0 0 35px var(--glow-color);
+  animation: textGlow 3s infinite alternate;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+  transition: transform var(--transition-speed) ease-in-out, filter var(--transition-speed) ease-in-out;
+  cursor: none;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+}
+
+.icon:hover {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.8));
+}
+
+/* Floating icons animation */
+.floating-icon {
+  animation: float 3s infinite ease-in-out;
+}
+
+/* Profile Flip Container */
+.flip-container {
+  perspective: 1000px;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.flipper {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.flip-container:hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background: radial-gradient(circle, var(--accent-color), black);
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  box-shadow: 0 0 20px var(--red-glow);
+}
