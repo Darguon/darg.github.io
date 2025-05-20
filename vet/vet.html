@@ -28,6 +28,16 @@
 
 		body {
 			font-family: 'Inter', sans-serif;
+			scroll-padding-top: 44px; /* Ensures that when navigating to anchors, content isn't hidden under fixed header */
+		}
+
+		/* Add smooth transition for the floating header */
+		header {
+			transition: all 0.3s ease;
+		}
+
+		.notification-bar {
+			transition: all 0.3s ease;
 		}
 
 		.product-card:hover {
@@ -51,13 +61,13 @@
 	</style>
 </head>
 <body class="bg-white text-text">
-<!-- Notification Bar -->
-<div class="notification-bar bg-primary text-white text-center py-2 px-4">
+<!-- Notification Bar - Now also fixed below header -->
+<div class="notification-bar bg-primary text-white text-center py-2 px-4 fixed top-0 left-0 w-full z-50">
 	<p>Tuotteet lemmikillesi ja hevosellesi. Ilmaiset toimitukset yli 100e tilauksille.</p>
 </div>
 
-<!-- Header -->
-<header class="bg-white border-b border-gray-200">
+<!-- Header - Now fixed to top, positioned below notification bar -->
+<header class="bg-white border-b border-gray-200 fixed top-8 left-0 w-full z-40 shadow-sm">
 	<div class="container mx-auto px-4">
 		<div class="flex justify-between items-center py-4">
 			<!-- Mobile Menu Button (visible on small screens) -->
@@ -70,7 +80,7 @@
 			<!-- Logo -->
 			<div class="flex-1 flex justify-center lg:justify-start lg:flex-none">
 				<a href="#" class="inline-block">
-					<img src="./Etusivu _ Vetstore_files/vetstore.png" alt="Vetstore" class="h-14">
+					<img src="./Etusivu _ Vetstore_files/vetstore.png" alt="Vetstore" class="h-12">
 				</a>
 			</div>
 
@@ -118,7 +128,7 @@
 	<!-- Navigation -->
 	<nav class="bg-white border-t border-gray-200 hidden lg:block">
 		<div class="container mx-auto px-4">
-			<ul class="flex space-x-8 py-4">
+			<ul class="flex space-x-8 py-3">
 				<li><a href="#" class="font-medium hover:text-primary transition-colors">Kissat</a></li>
 				<li><a href="#" class="font-medium hover:text-primary transition-colors">Koirat</a></li>
 				<li><a href="#" class="font-medium hover:text-primary transition-colors">Hevoset</a></li>
@@ -128,6 +138,9 @@
 		</div>
 	</nav>
 </header>
+
+<!-- Spacer to compensate for the fixed header and notification bar -->
+<div class="h-40 lg:h-44"></div>
 
 <!-- Main Banner -->
 <section class="relative bg-gray-100">
@@ -722,7 +735,7 @@
 </div>
 
 <!-- Back to Top Button -->
-<button class="fixed bottom-24 right-6 bg-primary text-white p-2 rounded-full shadow-md hover:bg-opacity-90 transition-all focus:outline-none">
+<button class="fixed bottom-24 right-6 bg-primary text-white p-2 rounded-full shadow-md hover:bg-opacity-90 transition-all focus:outline-none opacity-0 duration-300">
 	<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
 	</svg>
