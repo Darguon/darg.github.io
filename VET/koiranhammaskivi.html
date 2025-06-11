@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koiran hammaskivet ja hammashoito | Koiranhoito.fi</title>
+    <meta name="description" content="Koiran hammaskivet ja ientulehdus - tunnista oireet ja hoitokeinot. Hammashoito, plakki ja tartaari. Tehokkaat tuotteet suun terveydelle.">
+    <meta name="keywords" content="koiran hammaskivet, hammashoito koira, ientulehdus koira, suun hygienia koira">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 60px 40px;
+            border-radius: 2px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+            border-top: 4px solid #2c5282;
+        }
+
+        h1 {
+            color: #2c5282;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 1.25rem;
+            font-weight: 400;
+            max-width: 600px;
+        }
+
+        .author-info {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .content {
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 2px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #1a365d;
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 40px 0 25px 0;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            color: #2d3748;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 30px 0 15px 0;
+        }
+
+        .lead-paragraph {
+            font-size: 1.15rem;
+            color: #4a5568;
+            margin-bottom: 35px;
+            line-height: 1.8;
+        }
+
+        .dental-stages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 35px 0;
+        }
+
+        .stage-card {
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #4299e1;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .stage-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .stage-number {
+            background: #4299e1;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .stage-title {
+            font-weight: 600;
+            color: #2c5282;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .stage-description {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .stage-symptoms {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #e2e8f0;
+        }
+
+        .stage-symptoms h4 {
+            color: #2d3748;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .stage-symptoms ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .stage-symptoms li {
+            color: #4a5568;
+            font-size: 0.9rem;
+            padding: 3px 0;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .stage-symptoms li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #4299e1;
+        }
+
+        .prevention-section {
+            background: #f0fff4;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+            border-left: 4px solid #38a169;
+        }
+
+        .prevention-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .prevention-method {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .prevention-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #38a169, #48bb78);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .prevention-title {
+            color: #22543d;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .prevention-description {
+            color: #2d3748;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .warning-signs {
+            background: #fefcbf;
+            border: 1px solid #f6e05e;
+            border-left: 4px solid #d69e2e;
+            color: #744210;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .warning-signs h3 {
+            color: #744210;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .symptoms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .symptom-category {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .symptom-category h4 {
+            color: #744210;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .symptom-list {
+            list-style: none;
+        }
+
+        .symptom-list li {
+            color: #744210;
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .symptom-list li:before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+
+        .emergency-box {
+            background: #fed7d7;
+            border: 1px solid #feb2b2;
+            border-left: 4px solid #e53e3e;
+            color: #742a2a;
+            padding: 25px;
+            border-radius: 2px;
+            margin: 30px 0;
+        }
+
+        .emergency-box h3 {
+            color: #742a2a;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .emergency-box ul {
+            margin-left: 20px;
+        }
+
+        .emergency-box li {
+            margin-bottom: 8px;
+        }
+
+        .info-box {
+            background: #ebf8ff;
+            border: 1px solid #bee3f8;
+            border-left: 4px solid #3182ce;
+            color: #2c5282;
+            padding: 25px;
+            border-radius: 2px;
+            margin: 30px 0;
+        }
+
+        .info-box h3 {
+            color: #2c5282;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .treatment-section {
+            background: #edf2f7;
+            padding: 40px;
+            border-radius: 2px;
+            margin: 40px 0;
+            border-left: 4px solid #4299e1;
+        }
+
+        .treatment-section h3 {
+            color: #2d3748;
+            margin-top: 0;
+        }
+
+        .treatment-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .treatment-list li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            color: #4a5568;
+        }
+
+        .treatment-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #38a169;
+            font-weight: bold;
+        }
+
+        .diet-recommendations {
+            background: #f7fafc;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        .diet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .diet-category {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 3px solid #4299e1;
+        }
+
+        .diet-category h4 {
+            color: #2c5282;
+            margin-bottom: 15px;
+        }
+
+        .diet-category ul {
+            list-style: none;
+        }
+
+        .diet-category li {
+            color: #4a5568;
+            padding: 5px 0;
+            font-size: 0.95rem;
+        }
+
+        .cta-section {
+            background: #2c5282;
+            color: white;
+            padding: 50px;
+            border-radius: 2px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            border-bottom: none;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #e53e3e;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 10px;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background: #c53030;
+            transform: translateY(-1px);
+        }
+
+        .benefits {
+            margin-top: 25px;
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        .faq-section {
+            background: white;
+            padding: 50px;
+            border-radius: 2px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .faq-item {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: #2c5282;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .table-of-contents {
+            background: #f7fafc;
+            padding: 30px;
+            border-radius: 2px;
+            margin: 30px 0;
+            border-left: 4px solid #4299e1;
+        }
+
+        .table-of-contents h3 {
+            margin-top: 0;
+            color: #2d3748;
+        }
+
+        .table-of-contents ul {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .table-of-contents li {
+            margin: 8px 0;
+        }
+
+        .table-of-contents a {
+            color: #3182ce;
+            text-decoration: none;
+            padding: 5px 0;
+            display: block;
+        }
+
+        .table-of-contents a:hover {
+            color: #2c5282;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #64748b;
+            background: white;
+            border-radius: 2px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-top: 4px solid #e2e8f0;
+        }
+
+        .disclaimer {
+            font-size: 0.9rem;
+            margin-top: 20px;
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 2px;
+            color: #64748b;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .content, header, .faq-section {
+                padding: 30px 25px;
+            }
+
+            .dental-stages-grid, .prevention-grid, .symptoms-grid, .diet-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                padding: 35px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Koiran hammashoito ja hammaskivet</h1>
+        <p class="subtitle">Kattava veterinääritieteellinen opas koiran suun terveyteen, parodontaalisiin sairauksiin ja ehkäisevään hammashygienaan</p>
+        <div class="author-info">
+            Julkaistu: Kesäkuu 2025 | Päivitetty viimeksi: Kesäkuu 2025 | Luettu: 20 min
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="table-of-contents">
+            <h3>Sisällysluettelo</h3>
+            <ul>
+                <li><a href="#yleista">Yleistä koiran hammasongelmista</a></li>
+                <li><a href="#vaiheet">Hammassairauden vaiheet</a></li>
+                <li><a href="#oireet">Oireet ja merkit</a></li>
+                <li><a href="#ennaltaehkaisy">Ennaltaehkäisy kotona</a></li>
+                <li><a href="#ruokavalio">Ruokavalion merkitys</a></li>
+                <li><a href="#hoito">Ammattimainen hoito</a></li>
+                <li><a href="#anestesia">Hammashoito anestesiassa</a></li>
+                <li><a href="#jalkihoito">Jälkihoito ja seuranta</a></li>
+                <li><a href="#kysymykset">Usein kysytyt kysymykset</a></li>
+            </ul>
+        </div>
+
+        <p class="lead-paragraph">Parodontaalinen sairaus on yleisin krooninen sairaus koirilla, joka vaikuttaa yli 80% yli 3-vuotiaista koirista. Hammaskivet ja ientulehdus eivät ole vain kosmeettisia ongelmia, vaan voivat johtaa vakaviin terveysongelmiin kuten sydän-, maksa- ja munuaisongelmiin bakteeriemian kautta.</p>
+
+        <h2 id="yleista">Hammasongelmien patofysiologia</h2>
+
+        <div class="info-box">
+            <h3>Plakin muodostuminen ja progressio</h3>
+            <p>Hammaskivi alkaa plakin kertymisestä hampaiden pinnalle. Plakki on bakteerien, sylkeröitteiden ja ruoanjäämien muodostama biofilmi. Jos plakkia ei poisteta, se mineralisoituu muodostaen kovaa hammaskiveä (tartar). Bakteerit erittävät toksiineja, jotka ärsyttävät ikeniä ja aiheuttavat tulehduksen.</p>
+        </div>
+
+        <h2 id="vaiheet">Parodontaalisen sairauden vaiheet</h2>
+
+        <div class="dental-stages-grid">
+            <div class="stage-card">
+                <div class="stage-number">1</div>
+                <div class="stage-title">Gingiviitti (ientulehdus)</div>
+                <div class="stage-description">Lievä ientulehdus plakin ja hammaskiven aiheuttamana. Ikenien punoitus ja turvotus ikenilinjan alueella. Tässä vaiheessa muutokset ovat vielä palautuvia.</div>
+                <div class="stage-symptoms">
+                    <h4>Oireet:</h4>
+                    <ul>
+                        <li>Lievä ikeniverenvuoto</li>
+                        <li>Ikenien punoitus</li>
+                        <li>Lievä haju suusta</li>
+                        <li>Plakin kertyminen</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stage-card">
+                <div class="stage-number">2</div>
+                <div class="stage-title">Lievä parodontiitti</div>
+                <div class="stage-description">Tulehdus leviää syvemmälle kudoksiin. Alkavan luukadon merkkejä. Hampaiden kiinnityskudokset alkavat vaurioitua, mutta hampaat ovat vielä tukevasti paikoillaan.</div>
+                <div class="stage-symptoms">
+                    <h4>Oireet:</h4>
+                    <ul>
+                        <li>Voimakas pahanhaju</li>
+                        <li>Ikenien vetäytyminen</li>
+                        <li>Syvemmät ientaskut</li>
+                        <li>Veren ja märän eritys</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stage-card">
+                <div class="stage-number">3</div>
+                <div class="stage-title">Kohtalainen parodontiitti</div>
+                <div class="stage-description">Merkittävä luukato (25-50% juurien ympäriltä). Hampaiden kiinnityskudokset vaurioituneet. Mahdollisia infektioita ja märkiviä kohtia ikeneissä.</div>
+                <div class="stage-symptoms">
+                    <h4>Oireet:</h4>
+                    <ul>
+                        <li>Hampaiden löystyminen</li>
+                        <li>Märkivät kohat ikeneissä</li>
+                        <li>Voimakas pahanhaju</li>
+                        <li>Syömisen välttelyä</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stage-card">
+                <div class="stage-number">4</div>
+                <div class="stage-title">Edistynyt parodontiitti</div>
+                <div class="stage-description">Vakava luukato (>50% juurten ympäriltä). Hampaat löysiä tai putonneet. Riski vakaviin infektioihin ja systemaattisiin komplikaatioihin kuten endokardiittiin.</div>
+                <div class="stage-symptoms">
+                    <h4>Oireet:</h4>
+                    <ul>
+                        <li>Hampaiden putoaminen</li>
+                        <li>Kasvokipu ja turvotus</li>
+                        <li>Ruokahaluttomuus</li>
+                        <li>Yleinen sairaudentunne</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="oireet">Tunnista varoitusmerkit ajoissa</h2>
+
+        <div class="warning-signs">
+            <h3>Hammasongelmien varoitusmerkit</h3>
+            <div class="symptoms-grid">
+                <div class="symptom-category">
+                    <h4>Hengitys ja haju</h4>
+                    <ul class="symptom-list">
+                        <li>Paha hengityksen haju</li>
+                        <li>Metallinen maku tai haju</li>
+                        <li>Lisääntynyt kuolailu</li>
+                        <li>Veren haju hengityksessä</li>
+                    </ul>
+                </div>
+
+                <div class="symptom-category">
+                    <h4>Syömiskäyttäytyminen</h4>
+                    <ul class="symptom-list">
+                        <li>Syömisen välttelyä</li>
+                        <li>Hidas syöminen</li>
+                        <li>Ruoan pudottaminen suusta</li>
+                        <li>Yhden puolen suosiminen</li>
+                    </ul>
+                </div>
+
+                <div class="symptom-category">
+                    <h4>Fyysiset merkit</h4>
+                    <ul class="symptom-list">
+                        <li>Keltaiset/ruskeat hammaskivet</li>
+                        <li>Punaiset, turvonneet ikenet</li>
+                        <li>Verenvuoto ikeneistä</li>
+                        <li>Löysät hampaat</li>
+                    </ul>
+                </div>
+
+                <div class="symptom-category">
+                    <h4>Käyttäytymismuutokset</h4>
+                    <ul class="symptom-list">
+                        <li>Leikkien välttelyä</li>
+                        <li>Kosketusarkuus kasvoissa</li>
+                        <li>Vetäytyminen sosiaalisista tilanteista</li>
+                        <li>Ärtyneisyys</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="emergency-box">
+            <h3>Kiireellistä hoitoa vaativat tilanteet</h3>
+            <ul>
+                <li>Voimakas kasvokipu tai turvotus</li>
+                <li>Märkivät kohat ikeneissä tai kasvoissa</li>
+                <li>Täydellinen ruokakielto yli 24 tuntia</li>
+                <li>Hampaiden nopea löystyminen tai putoaminen</li>
+                <li>Veren spottailu syljessä jatkuvasti</li>
+                <li>Kuume yhdessä hammasongelmien kanssa</li>
+            </ul>
+        </div>
+
+        <h2 id="ennaltaehkaisy">Ehkäisevä hammashoito kotona</h2>
+
+        <div class="prevention-section">
+            <h3>Tehokkaat ehkäisykeinot</h3>
+            <div class="prevention-grid">
+                <div class="prevention-method">
+                    <div class="prevention-icon">🦷</div>
+                    <div class="prevention-title">Säännöllinen hampaiden harjaus</div>
+                    <div class="prevention-description">Ihanteellisesti päivittäin, vähintään 3-4 kertaa viikossa. Käytä koiran omaa hammasharjaa ja koiraystävällistä hammastahnaa. Aloita nuorena ja totuta vähitellen.</div>
+                </div>
+
+                <div class="prevention-method">
+                    <div class="prevention-icon">🔍</div>
+                    <div class="prevention-title">Säännölliset tarkastukset</div>
+                    <div class="prevention-description">Tarkasta koiran suu viikottain kotona. Eläinlääkärintarkastus vuosittain nuorilla, puolivuosittain vanhemmilla koirilla. Varhainen puuttuminen on avain onnistuneeseen hoitoon.</div>
+                </div>
+
+                <div class="prevention-method">
+                    <div class="prevention-icon">🎾</div>
+                    <div class="prevention-title">Hammasystävälliset lelut</div>
+                    <div class="prevention-description">VOHC-hyväksytyt purulelut ja hampaidenpuhdistuslelut. Välttää liian kovia esineitä (kivet, luut), jotka voivat murta hampaita. Rope-lelut ja kumi-lelut ovat hyviä vaihtoehtoja.</div>
+                </div>
+
+                <div class="prevention-method">
+                    <div class="prevention-icon">💧</div>
+                    <div class="prevention-title">Suuveden käyttö</div>
+                    <div class="prevention-description">Antibakteeriset suuvedet tai geeli voidaan lisätä juomaveteen. Ensymaattiset tuotteet hajottavat plakkia ja vähentävät bakteerien määrää suussa.</div>
+                </div>
+
+                <div class="prevention-method">
+                    <div class="prevention-icon">🍖</div>
+                    <div class="prevention-title">Hampaidenpuhdistusherkut</div>
+                    <div class="prevention-description">VOHC-sertifioidut dentaaliset herkut päivittäin. Raakanahat ja erikoisvalmisteet auttavat mekaanisessa plakin poistossa. Valitse koiran kokoon sopivat tuotteet.</div>
+                </div>
+
+                <div class="prevention-method">
+                    <div class="prevention-icon">🥗</div>
+                    <div class="prevention-title">Oikea ruokinta</div>
+                    <div class="prevention-description">Kuivarehu on parempi kuin märkäruoka hampaiden kannalta. Erikoisdieettiruoat hammasten terveydelle. Vältä liikaa sokerisia herkkuja ja ihmisruokaa.</div>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="ruokavalio">Ruokavalion merkitys hammasterveydelle</h2>
+
+        <div class="diet-recommendations">
+            <h3>Hammasystävällinen ruokavalio</h3>
+            <div class="diet-grid">
+                <div class="diet-category">
+                    <h4>Suositeltavat ruoat</h4>
+                    <ul>
+                        <li>• Kuivarehu (hankaa hampaita syötäessä)</li>
+                        <li>• Dental-care erikoisruoat</li>
+                        <li>• Raa'at porkkanapalat (pienet koirat)</li>
+                        <li>• Omenopalat (poista siemenet)</li>
+                        <li>• VOHC-hyväksytyt hammaspalat</li>
+                    </ul>
+                </div>
+
+                <div class="diet-category">
+                    <h4>Vältettävät ruoat</h4>
+                    <ul>
+                        <li>• Liikaa märkäruokaa</li>
+                        <li>• Sokeriset herkut</li>
+                        <li>• Tahmeaa ruokaa joka tarttuu hampaisiin</li>
+                        <li>• Ihmisruoan jäännökset</li>
+                        <li>• Liian kovat luut ja okaat</li>
+                    </ul>
+                </div>
+
+                <div class="diet-category">
+                    <h4>Lisäravinteet</h4>
+                    <ul>
+                        <li>• Omega-3 rasvahapot (vähentävät tulehdusta)</li>
+                        <li>• Probioitit (tasapainottavat suun bakteereita)</li>
+                        <li>• Vitamin C (tukee ikeiden terveyttä)</li>
+                        <li>• Kalsium ja fosfori (vahvistavat hampaita)</li>
+                        <li>• CoQ10 (ikenien terveys)</li>
+                    </ul>
+                </div>
+
+                <div class="diet-category">
+                    <h4>Juomavesi</h4>
+                    <ul>
+                        <li>• Puhdas, rakas vesi jatkuvasti saatavilla</li>
+                        <li>• Suun terveyden additiivit veteen</li>
+                        <li>• Säännöllinen kulhojen puhdistus</li>
+                        <li>• Välttää makeutettuja juomia</li>
+                        <li>• Kannusta juomaan (auttaa huuhtelemaan suuta)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="hoito">Ammattimainen hammashoito</h2>
+
+        <div class="treatment-section">
+            <h3>Eläinlääkärin suorittama hammashoito</h3>
+            <ul class="treatment-list">
+                <li>Täydellinen suun tutkimus anestesiassa</li>
+                <li>Ultraääniskaaling plakkien ja kivent poistoamiseksi</li>
+                <li>Subgingivaalinen puhdistus ientaskuissa</li>
+                <li>Hampaiden kiillotus ja fluorauskäsittely</li>
+                <li>Röntgenkuvaus hampaiden juurista ja luustosta</li>
+                <li>Vaurioituneiden hampaiden hoito tai poisto</li>
+                <li>Antibioottihoito tarvittaessa</li>
+            </ul>
+        </div>
+
+        <h3>Milloin ammattimaista hoitoa tarvitaan</h3>
+        <p>Hammashoitoa suositellaan vuosittain tai useammin riippuen koiran iästä ja hammasten kunnosta. Vaikka kotihoito on tärkeää, vain ammattimainen hoito voi poistaa kivetä ienlinjan alta ja arvioida hampaiden juurien kuntoa.</p>
+
+        <h2 id="anestesia">Anestesia hammasinoidossa</h2>
+
+        <div class="info-box">
+            <h3>Anestesian turvallisuus</h3>
+            <p>Nykyaikainen eläinlääketieteellinen anestesia on erittäin turvallista. Ennakkokokeet (verenkuva, biokemia, EKG) arvioivat koiran soveltuvuutta anestesiaan. Anestesia-seuranta on jatkuvaa ja ammattitaitoista. Tehokkaaseen hammashoitoon tarvitaan täydellinen liikkumattomuus.</p>
+        </div>
+
+        <h3>Anestesiaton hammashoito</h3>
+        <p>Anestesiaton "kosmeettinen" hammashoito ei ole suositeltavaa, koska se ei mahdollista ienlinjan alapuolisten alueiden puhdistusta, aiheuttaa koiralle stressiä ja saattaa jättää tärkeimmät ongelma-alueet hoitamatta.</p>
+
+        <h2 id="jalkihoito">Jälkihoito ja ylläpito</h2>
+
+        <div class="treatment-section">
+            <h3>Hammashoiton jälkeinen hoito</h3>
+            <ul class="treatment-list">
+                <li>Pehmeä ruoka 3-5 päivää hammaspoistojen jälkeen</li>
+                <li>Antibioottikuuri loppuun mikäli määrätty</li>
+                <li>Kipulääkitys määräyksen mukaan</li>
+                <li>Vältä kovia leluja ja herkkuja ensimmäisen viikon</li>
+                <li>Aloita hammasharja-rutiini uudelleen varovasti</li>
+                <li>Seurantakäynti 2-4 viikon kuluttua</li>
+                <li>Valokuva hampaista vertailua varten</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2>Hammashoitotuotteet koirille</h2>
+        <p>Vetstore.fi tarjoaa kattavan valikoiman koiran hammashoitotuotteita. Hammasharjat, -tahnat, purulelut ja dentaliherkut ammattilaislaadusta.</p>
+        <a href="https://www.vetstore.fi/category/4/hammashoito" class="cta-button">Hammashoitotuotteet</a>
+        <a href="https://www.vetstore.fi/category/52/ruoat" class="cta-button">Dental-care ruoat</a>
+        <a href="https://www.vetstore.fi/category/51/vitamiinit-ja-hivenaineet" class="cta-button">Suun terveys lisäravinteet</a>
+        <div class="benefits">
+            Ilmainen toimitus yli 100€ tilauksille • Nopeat toimitukset • Hammashoitoasiantuntijat
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <h2 id="kysymykset">Usein kysytyt kysymykset</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">Kuinka usein koiran hampaat pitää harjata?</div>
+            <div class="faq-answer">Ihanteellisesti päivittäin, mutta vähintään 3-4 kertaa viikossa hammastaineeiden ehkäisemiseksi. Säännöllisyys on tärkeämpää kuin täydellisyys - lyhyet, säännölliset harjaukset ovat parempia kuin satunnaiset pitkät sessiot.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Voiko ihmisten hammastahnaa käyttää koiralle?</div>
+            <div class="faq-answer">Ei koskaan! Ihmisten hammastalwat sisältävät xylitolia ja fluordia, jotka ovat myrkyllisiä koirille. Käytä aina koirille tarkoitettua hammastahnaa, joka on turvallista nieltäväksi.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Milloin koiralle pitää tehdä ensimmäinen ammattimainen hammashoito?</div>
+            <div class="faq-answer">Useammin 2-3 vuoden iässä, riippuen rodusta ja hampaiden kunnosta. Pienet rodut tarvitsevat hoitoa usein aikaisemmin kuin suuret rodut. Eläinlääkäri arvioi tarpeen vuosittaisissa tarkastuksissa.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Voiko vanha koira jänestellä anestesiahammashoitoa?</div>
+            <div class="faq-answer">Ikä itsessään ei ole este anestesialle. Kunnollisilla ennakkokokeilla ja nykyaikaisella anestesialla myös iäkkäät koirat voivat turvallisesti läpäistä hammashoiton. Riskien ja hyötyjen arviointi on aina yksilöllistä.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Auttavatko raakanahat ja puruluut hampaiden puhdistukseen?</div>
+            <div class="faq-answer">VOHC-hyväksytyt purutuotteet voivat auttaa plakin poistossa. Välttää liian kovia luita ja kivejä, jotka voivat murtaa hampaita. Seuraa aina koiran rehoessa ja valitse korkoon sopiva tuote.</div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Koiranhoito.fi</strong> - Luotettavaa veterinääritietoa koiran hyvinvointiin</p>
+        <div class="disclaimer">
+            <p>Tämä artikkeli perustuu ajankohtaiseen veterinääritieteelliseen kirjallisuuteen ja on tarkoitettu yleiseen tiedottamiseen. Se ei korvaa ammattimaista eläinlääketieteellistä neuvontaa, diagnoosia tai hoitoa. Vakavissa hammasongelmissa, kivussa tai infektio-oireissa ota välittömästi yhteyttä eläinlääkäriin.</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
