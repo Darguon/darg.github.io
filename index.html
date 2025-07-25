@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@darg | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-gradient flex items-center justify-center relative">
+<!-- Click to Enter Overlay -->
+<div id="enter-overlay" class="fixed inset-0 z-[100] bg-black bg-opacity-90 flex items-center justify-center backdrop-blur-sm cursor-pointer">
+    <div class="text-center">
+        <h2 class="text-2xl font-light text-white mb-2 opacity-80">click to enter</h2>
+        <div class="w-12 h-[1px] bg-white opacity-30 mx-auto"></div>
+    </div>
+</div>
+
+<!-- Animated Particles -->
+<div id="particles" class="absolute inset-0 z-0"></div>
+
+<!-- Volume Control -->
+<div class="volume-control-container fixed top-6 left-6 z-50">
+    <div class="volume-control">
+        <div class="volume-icon">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.82L4.38 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.38l4.003-3.82a1 1 0 011-.104zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.983 5.983 0 01-1.757 4.243 1 1 0 01-1.415-1.414A3.983 3.983 0 0013 10a3.983 3.983 0 00-1.172-2.829 1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+        </div>
+        <div class="volume-slider">
+            <input type="range" min="0" max="100" value="50" class="slider">
+        </div>
+    </div>
+</div>
+
+<!-- Visitor Counter -->
+<div class="visitor-counter fixed top-6 right-6 z-50 rounded-lg px-4 py-2">
+    <div class="text-white text-sm font-medium text-center">
+        <span id="visitor-count" class="glow">1337</span>
+        <div class="text-xs text-gray-400 opacity-60 mt-1 font-light">visitors</div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="relative z-10 text-center">
+    <!-- Avatar -->
+    <div class="avatar-container mb-8 mx-auto w-32 h-32 relative">
+        <div class="avatar-glow"></div>
+        <div class="relative w-full h-full rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1">
+            <div class="w-full h-full rounded-full bg-gray-800 flex items-center justify-center text-4xl font-bold text-white">
+                D
+            </div>
+        </div>
+    </div>
+
+    <!-- Name -->
+    <h1 class="text-6xl font-bold text-white mb-8 glow">
+        darg
+    </h1>
+
+    <!-- Social Links -->
+    <div class="flex items-center justify-center space-x-6 mb-8">
+        <!-- Discord -->
+        <a href="#" class="social-link click-ripple rounded-xl p-4 group">
+            <svg class="w-8 h-8 text-white group-hover:text-blue-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.195.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+            </svg>
+        </a>
+
+        <!-- GitHub -->
+        <a href="#" class="social-link click-ripple rounded-xl p-4 group">
+            <svg class="w-8 h-8 text-white group-hover:text-green-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Description -->
+    <p class="text-gray-300 text-lg max-w-md mx-auto">
+        Developer • Creator • Dreamer
+    </p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
