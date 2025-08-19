@@ -119,6 +119,15 @@ body {
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .particle,
+    .glow,
+    .avatar-container,
+    .avatar-glow {
+        animation: none;
+    }
+}
+
 .volume-control-container {
     position: fixed;
     top: 24px;
